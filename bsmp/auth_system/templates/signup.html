@@ -1,0 +1,84 @@
+<h1>Signup Page</h1>
+{% if msg %}
+    <p class="error-msg">{{ msg }}</p>
+{% endif %}
+<form action="" method="POST" class="signup-form">
+    {% csrf_token %}
+    <label for="">Username</label> <br>
+    <input type="text" name="un"><br>
+
+    <label for="">Email</label><br>
+    <input type="email" name="em"><br>
+
+    <label for="">Password</label><br>
+    <input type="password" name="pw1"><br>
+
+    <label for="">Confirm Password</label><br>
+    <input type="password" name="pw2"><br>
+
+    <input type="submit" value="Signup">
+</form>
+
+<p class="login-prompt">If you already have account 
+    <button class="login-button"><a href="{% url 'login' %}">Login</a></button></p>
+
+<style>
+body {
+        background-color: #059efd; 
+}
+.error-msg {
+    color: red;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin: auto;
+    padding: 10px;
+    background-color: #08e6af;      
+}
+
+.signup-form label {
+    font-weight: bold;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.signup-form input[type="submit"] {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-form input[type="submit"]:hover {
+    background-color:  #0056b3;
+}
+
+.login-prompt {
+    color: rgb(15, 4, 27);
+    text-align: center;
+}
+
+.login-button {
+    background-color: yellow;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.login-button a {
+    text-decoration: none;
+    color: black;
+}
+</style>

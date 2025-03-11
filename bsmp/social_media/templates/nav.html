@@ -1,0 +1,30 @@
+<ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm nav-container" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link rounded-5" id="home-tab2" href="{% url 'social_media' %}" role="tab" aria-selected="false">Home</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link rounded-5" id="profile-tab2" href="{% url 'user_dashboard' %}" role="tab" aria-selected="false">Profile</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link rounded-5" id="create-tab2" href="{% url 'create_post' %}" role="tab" aria-selected="false">Create</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link rounded-5" id="logout-tab2" href="{% url 'logout' %}" role="tab" aria-selected="false">Logout</a>
+    </li>
+</ul>
+
+<style>
+    .nav-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .nav-link:hover {
+        background-color: var(--bs-white);
+        color: var(--bs-primary);
+    }
+    .nav-link#profile-tab2:hover {
+        background-color: var(--bs-white);
+        color: var(--bs-secondary);
+    }
+</style>

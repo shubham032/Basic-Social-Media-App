@@ -1,0 +1,59 @@
+{% extends 'social_media.html' %}
+{% block title %} Update | Social Media {% endblock title %}
+{% block content %}
+<style>
+    body {
+        background-color: #059efd;
+    }
+    .update-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #08e6af;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .update-form label {
+        font-weight: bold;
+    }
+    .update-form input[type="text"],
+    .update-form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #0d0c0c;
+        border-radius: 4px;
+    }
+    .update-form button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+    .update-form button:hover {
+        background-color: #0056b3;
+    }
+    .update-form .delete-button {
+        background-color: #dc3545;
+    }
+    .update-form .delete-button:hover {
+        background-color: #544345;
+    }
+</style>
+
+<form method="POST" action="{% url 'update_post' social_media.id %}" class="update-form">
+    {% csrf_token %}
+    <label for="title">Title</label>
+    <input type="text" name="title" value="{{ social_media.title }}">
+    <label for="content">Content</label>
+    <textarea name="content" id="content" cols="30" rows="10">{{ social_media.content }}</textarea>
+    <label for="category">Category</label>
+    <input type="text" name="category" value="{{ social_media.category }}">
+    <button type="submit">Update</button>
+    <button type="button" class="delete-button" onclick="window.location.href='{% url 'delete_post' social_media.id %}'">Delete</button>
+</form>
+{% endblock content %}

@@ -1,0 +1,53 @@
+<h1>Login-Page</h1>
+
+{% if msg %}
+<p style="color: red;">{{ msg }}</p>
+{% endif %}
+<form action="" method="POST" class="login-form">
+    {% csrf_token %}
+    <label for="" style="font-size:x-large" >Username</label> <br>
+    <input type="text" name="un"><br>
+
+    <label for=""  style="font-size:x-large" >Password</label><br>
+    <input type="password" name="pw"><br>
+
+    <input type="submit" value="Login" class="btn-submit">
+</form>
+<p class="signup-prompt">If you don't have account<button class="btn-signup"><a href="{% url 'signup' %}">Sign Up</a></button></p>
+
+<style>
+    body {
+        background-color: #059efd;
+    }
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        background-color: #08e6af;
+        margin: 70px ;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+    }
+
+    .login-form label {
+    font-weight: bold;
+    }
+    .btn-submit, .btn-signup {
+        background-color: #4CAF50;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .btn-signup a {
+        text-decoration: none;
+        color: inherit;
+    }
+    .signup-prompt {
+        color: rgb(15, 4, 27);
+        text-align: center;
+    }
+</style>

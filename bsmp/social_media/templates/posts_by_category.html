@@ -1,0 +1,44 @@
+{% extends 'social_media.html' %}
+{% block title %} Posts in {{ category.name }} {% endblock title %}
+{% block content %}
+<style>
+    body {
+        background-color: #059efd;
+    }
+    .posts-list {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .post-item {
+        padding: 20px;
+        background-color: #08e6af;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .post-item a {
+        font-weight: bold;
+        color: #007bff;
+        text-decoration: none;
+    }
+    .post-item a:hover {
+        text-decoration: underline;
+    }
+    .post-item p {
+        margin: 10px 0 0;
+    }
+    
+</style>
+
+<h1>Posts in {{ category.name }}</h1>
+<ul class="posts-list">
+    {% for post in posts %}
+    <li class="post-item">
+        <a href="{% url 'single_post' post.id %}">{{ post.title }}</a>
+        <p>{{ post.content }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}
