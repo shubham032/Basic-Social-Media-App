@@ -49,8 +49,8 @@ bsmp/
 - 📄 **Post Details**: View a single post, add comments, and like/unlike the post.
 - 🔑 **Authentication**: Users can sign up, log in, and log out.
 
-## Models
-Post
+## 📊 Models
+📝 Post
 - **title**: Title of the post.
 - **content**: Content of the post.
 - **category**: Foreign key to the Category model.
@@ -58,19 +58,19 @@ Post
 - **total_likes()**: Returns the total number of likes for the post.
 - **total_comments()**: Returns the total number of comments for the post.
 
-Comment
+💬 Comment
 - **post**: Foreign key to the Post model.
 - **content**: Content of the comment.
 - **user**: Foreign key to the User model.
 
-Category
+🗂️ Category
 - **name**: Name of the category (e.g., Lifestyle, Technology, etc.).
 
-Like
+👍 Like
 - **post**: Foreign key to the Post model.
 - **user**: Foreign key to the User model.
 
-## Templates
+## 📄 Templates
 - **all_posts.html**: Displays all posts.
 - **create_post.htm**l: Form to create a new post.
 - **single_post.html**: Displays a single post with comments and like functionality.
@@ -78,8 +78,8 @@ Like
 - **user_dashboard.html**: Displays the user's posts.
 - **nav.html**: Navigation bar for the application.
 
-## Contributing
+## 🤝 Contributing
 Contributions are welcome! Please fork the repository and submit a pull request.
 
-## License
+## 📜 License
 This project is licensed under the MIT License. See the LICENSE file for details.
